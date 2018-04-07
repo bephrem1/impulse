@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,700');
+
+:root{
+    --black: #04080F;
+    --darkgreen: #008748;
+    --green: #13BE7F;
+    --red: #EF2D56;
+    --white: #FFFFFF;
+    --gray: #DBDBDB;
+}
+
+body{
+    font-family: 'Roboto';
+    overflow-y: hidden;
+    overflow-x: hidden !important;
+    background-color: var(--green);
+    color: var(--white);
+    max-height: 100vh;
+}
+
+h1, h2, h5{
+    line-height: 50px;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+.nav{
+    padding: 10px;
+}
+
+.nav-item{
+    padding: 5px 10px;
+}
+
+.nav-item:hover{
+    background-color: var(--white);
+    color: var(--green) !important;
+    cursor: pointer;
+}
+
+@media (max-width: 768px){
+    .nav h1{
+        text-align: center !important;
+    }
+    .nav h5{
+        text-align: center !important;
+    }
+}
