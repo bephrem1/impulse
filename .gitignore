@@ -2,3 +2,4 @@
 *.idea
 credentials.js
 out/
+.DS_Store
