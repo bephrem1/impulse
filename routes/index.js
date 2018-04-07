@@ -12,6 +12,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
+
+    // Pull the purchases off of the user document
+
+
     return res.render('dashboard');
 });
 
@@ -48,7 +52,6 @@ router.get('/log-out', function(req, res, next) {
 router.post('/sign-up', function(req, res, next) {
     //Server-side form error checking code
     if(req.body.name && req.body.email && req.body.password){
-
         // Extract form info into object
         const userData = {
             name: req.body.name,

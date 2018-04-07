@@ -15,12 +15,12 @@
                 <div class = "col-md-8 offset-md-2 signin-wrapper">
                     <h1 class = "text-center light">Sign In</h1>
                     <br>
-                    <form class = "col-md-6 offset-md-3">
+                    <form class = "col-md-6 offset-md-3" action='/sign-in' method="post">
                         <div class="form-group">
-                            <input type="email" class="form-control light" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="email" class="form-control light" name="email" aria-describedby="emailHelp" placeholder="Enter email">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control light" id="password" placeholder="Password">
+                            <input type="password" class="form-control light" name="password" placeholder="Password">
                         </div>
                         <div class = "text-center"><button type="submit" class="btn btn-primary" id = "signin-button">Sign In</button></div>
                     </form>
