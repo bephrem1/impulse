@@ -15,11 +15,11 @@ router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
     return res.render('dashboard');
 });
 
-router.get('/login', mid.checkAlreadyLoggedIn, function(req, res, next) {
+router.get('/sign-in', mid.checkAlreadyLoggedIn, function(req, res, next) {
     return res.render('sign-in');
 });
 
-router.get('/signup', mid.checkAlreadyLoggedIn, function(req, res, next) {
+router.get('/sign-up', mid.checkAlreadyLoggedIn, function(req, res, next) {
     return res.render('sign-up');
 });
 

@@ -3,8 +3,14 @@
         <h1 class = "col-md-6 text-left medium nav-header">
             Impulse
         </h1>
+        <% if (2 == 2) {%>
         <h5 class = "col-md-6 text-right">
-            <a href = "/" class = "nav-item light">Home</a><a href = "/dashboard" class = "nav-item light">Dashboard</a><a href = "/options" class = "nav-item light">Options</a>
+            <a href = "/" class = "nav-item">Home</a><a href = "/sign-in" class = "nav-item">Dashboard</a>
         </h5>
+        <% } else { %>
+        <h5 class = "col-md-6 text-right">
+            <a href = "/" class = "nav-item">Home</a><a href = "/dashboard" class = "nav-item">Dashboard</a><a href = "/log-out" class = "nav-item">Logout</a>
+        </h5>
+        <% } %>
     </div>
 </div>

@@ -8,20 +8,24 @@
         <% include ../views/partials/nav %>
 
         <div class = "container">
-            <div class = "main-wrapper">
-                <div class = "row title-wrapper">
-                    <h2 class = "col-md-12 text-center bold">Impulse Brings Consciousness To Consumerism.</h2>
+            <div class = "index-wrapper">
+                <div class = "row">
+                    <h2 class = "col-md-12 text-center light">Impulse Brings Consciousness To Consumerism.</h2>
                 </div>
                 <br>
                 <div class = "image-wrapper text-center">
-                    <img id = "main-chart" src = "/images/main-chart1.png" class = "img-fluid"></img>
+                    <img id = "index-image" src = "/images/main-chart1.png" class = "img-fluid"></img>
                 </div>
                 <br>
-                <div class = "row login-signup">
-                    <h5 class = "col-md-12 button-wrapper text-center">
+
+                <% if (2 == 2) {%>
+                <div class = "row index-login-signup">
+                    <h5 class = "col-md-12 index-button-wrapper text-center">
                         <a href = "sign-in" class = "button">Sign In</a><a href = "sign-up" class = "button">Sign Up</a>
                     </h5>
                 </div>
+                <% } %>
+
             </div>
         </div>
 
