@@ -39,7 +39,7 @@
 
             <div class = "analytics-card">
                 <h3>Individual Item Analytics</h3>
-                <table class="table table-hover">
+                <table class="table table-hover table-responsive">
                     <thead>
                         <tr>
                             <th scope="col">Date</th>
@@ -53,7 +53,8 @@
                         <% for (i = 0; i < user.purchaseData.length; i++){ %>
                             <tr>
                                 <th scope="row">
-                                    <%= user.purchaseData[i].purchaseDate %>
+                                    <% var d = new Date(user.purchaseData[i].purchaseDate * 1000); %>
+                                    <%= d.toDateString().substring(4, 10) %>
                                 </th>
 
                                 <td><% if (!user.purchaseData[i].wasPurchased){ %>
@@ -87,12 +88,12 @@
                 labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
                 datasets: [{ 
                     data: [86,114,106,106,107,111,133,221,783,2478],
-                    label: "Africa",
+                    label: "Items Purchased",
                     borderColor: "#3e95cd",
                     fill: false
                 }, { 
                     data: [282,350,411,502,635,809,947,1402,3700,5267],
-                    label: "Asia",
+                    label: "Impulses Avoided",
                     borderColor: "#8e5ea2",
                     fill: false
                 }
@@ -101,7 +102,7 @@
             options: {
                 title: {
                 display: true,
-                text: 'World population per region (in millions)'
+                text: 'Impulses Avoided'
                 }
             }
         });

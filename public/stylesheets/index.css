@@ -78,6 +78,7 @@ h1, h2, h5{
     padding: 25px 25px;
     margin: 0px;
     margin-top: 25px;
+    margin-bottom: 25px;
     background-color: var(--white);
     color: var(--green);
     border-radius: 4px;

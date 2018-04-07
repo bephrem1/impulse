@@ -22,19 +22,15 @@ router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
             } else {
                 let impulseSum = 0;
                 let impulseDollars = 0;
+
                 user.purchaseData.forEach(element => {
                     if (element.wasPurchased == false){
                         impulseSum++;
                         impulseDollars += element.itemPrice;
                     }
-                    // // console.log(dateHelpers.epochToDateString(element.purchaseDate));
-                    // element.purchaseDate = 5;
-                    // // console.log("why does this not update");
-                    // element['purchaseDate'] = dateHelpers.epochToDateString(element.purchaseDate);
-                    // element.purchaseDate = "what";
-                    // console.log(element['purchaseDate']);
+                    
+                    
                 });
-
 
                 // If no error render dashboard and pass user object in model
                 return res.render('dashboard', {
