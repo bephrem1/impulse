@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Roboto:300,500,700');
+
+:root{
+    --black: #04080F;
+    --darkgreen: #008748;
+    --green: #13BE7F;
+    --red: #EF2D56;
+    --white: #FFFFFF;
+    --gray: #DBDBDB;
+}
+
+body{
+    font-family: 'Roboto';
+    overflow-x: hidden !important;
+    background-color: var(--green);
+    color: var(--white);
+    max-height: 100vh;
+}
+
+h1, h2, h5{
+    line-height: 50px;
+}
+
+.light{
+    font-weight: 300;
+}
+
+.medium{
+    font-weight: 400;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+.nav{
+    padding: 15px;
+}
+
+.nav-header{
+    font-family: "Pacifico";
+}
+
+.nav-item{
+    color: var(--white) !important;
+    padding: 5px 10px;
+}
+
+.nav-item:hover{
+    text-decoration: none;
+    background-color: var(--white);
+    color: var(--green) !important;
+    cursor: pointer;
+}
+
+/* INDEX */
+
+.main-wrapper{
+    position: relative;
+    top: 5vh;
+}
+
+#main-chart{
+    width: 70%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.button-wrapper a{
+    color: var(--white) !important;
+    padding: 8px 14px;
+}
+
+.button-wrapper a:hover{
+    text-decoration: none;
+    background-color: var(--white);
+    color: var(--green) !important;
+    cursor: pointer;
+}
+
+@media (max-width: 768px){
+    .nav h1{
+        text-align: center !important;
+    }
+    .nav h5{
+        text-align: center !important;
+    }
+}
