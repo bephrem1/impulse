@@ -4,24 +4,22 @@ const router = express.Router();
 const User = require('../models/user');
 const dateHelpers = require('../helpers/dateHelpers');
 
+const mid = require('../middleware/index');
+
 // GET '/'
 router.get('/', function(req, res, next) {
     return res.render('index');
 });
 
-router.get('/dashboard', function(req, res, next) {
+router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
     return res.render('dashboard');
 });
 
-router.get('/options', function(req, res, next) {
-    return res.render('options');
-});
-
-router.get('/login', function(req, res, next) {
+router.get('/login', mid.checkAlreadyLoggedIn, function(req, res, next) {
     return res.render('sign-in');
 });
 
-router.get('/signup', function(req, res, next) {
+router.get('/signup', mid.checkAlreadyLoggedIn, function(req, res, next) {
     return res.render('sign-up');
 });
 
