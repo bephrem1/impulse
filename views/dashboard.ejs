@@ -12,25 +12,25 @@
             <div class = "col-md-4"><div class = "stat">
                 <h3>Impulses This Month</h3>
                 <div class = "inner-stat">
-                    <h1>12</h1>
+                    <h1><%=impulseSum%></h1>
                 </div>
             </div></div>
             <div class = "col-md-4"><div class = "stat">
                 <h3>Dollars Saved</h3>
                 <div class = "inner-stat">
-                    <h1>$44</h1>
+                    <h1>$<%=impulseDollars%></h1>
                 </div>
             </div></div>
             <div class = "col-md-4"><div class = "stat">
                 <h3>Total Purchases</h3>
                 <div class = "inner-stat">
-                    <h1>12</h1>
+                    <h1><%=user.purchaseData.length-impulseSum%></h1>
                 </div>
             </div></div>
             </div>
             <div class = "row">
                 <div class = "col-md-6"><div class = "graph">
-                    Graph 1
+                    <canvas id="line-chart" width="800" height="450"></canvas>
                 </div></div>
                 <div class = "col-md-6"><div class = "graph">
                     Graph 2
@@ -38,14 +38,40 @@
             </div>
 
             <div class = "analytics-card">
-                <h3>Individual analytics</h3>
-                <hr>
-                <div class = "entry">
-                    Entry 1
-                </div>
+                <h3>Individual Item Analytics</h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Impulse?</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Justification</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (i = 0; i < user.purchaseData.length; i++){ %>
+                            <tr>
+                                <th scope="row">
+                                    <%= user.purchaseData[i].purchaseDate %>
+                                </th>
+
+                                <td><% if (!user.purchaseData[i].wasPurchased){ %>
+                                            Yes
+                                        <%} else { %>
+                                            No
+                                        <%}%>
+                                </td> 
+                                <td><%= user.purchaseData[i].itemTitle %></td>
+                                <td><%= user.purchaseData[i].decisionReason %></td>
+                                <td>$<%= user.purchaseData[i].itemPrice %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
             </div>
           
-            <!-- <canvas id="chart1" width="400" height="400"></canvas> -->
+            
 
         </div>
 
@@ -53,38 +79,32 @@
 
     </body>
 
-    <!-- <script>
+    <script>
 
-    var ctx = document.getElementById("chart1").getContext('2d');
-    var myBarChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: options
-    });
+        var chart1 = new Chart(document.getElementById("line-chart"), {
+            type: 'line',
+            data: {
+                labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+                datasets: [{ 
+                    data: [86,114,106,106,107,111,133,221,783,2478],
+                    label: "Africa",
+                    borderColor: "#3e95cd",
+                    fill: false
+                }, { 
+                    data: [282,350,411,502,635,809,947,1402,3700,5267],
+                    label: "Asia",
+                    borderColor: "#8e5ea2",
+                    fill: false
+                }
+                ]
+            },
+            options: {
+                title: {
+                display: true,
+                text: 'World population per region (in millions)'
+                }
+            }
+        });
 
-
-    </script> -->
+    </script>
 </html>
