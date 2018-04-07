@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <% include ../views/partials/head %>
+
+    <body>
+
+        <div class = "container">
+            <div class = "row signup-header">
+                <h1 class = "col-md-12 text-center medium nav-header">
+                    Impulse
+                </h1>
+            </div>
+            <div class = "row">
+                <div class = "col-md-8 offset-md-2 signup-wrapper">
+                    <h1 class = "text-center light">Sign Up</h1>
+                    <br>
+                    <form class = "col-md-6 offset-md-3" action='/sign-up' method="post">
+                        <div class="form-group">
+                            <input type="name" class="form-control light" name="name" aria-describedby="emailHelp" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control light" name="email" aria-describedby="emailHelp" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control light" name="password" placeholder="Password">
+                        </div>
+                        <div class = "text-center"><button type="submit" class="btn btn-primary" id = "signup-button">Sign Up</button></div>
+                    </form>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+        <% include ../views/partials/footer %>
+
+    </body>
+</html>
