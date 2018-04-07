@@ -11,18 +11,28 @@ router.get('/', function(req, res, next) {
     return res.render('index');
 });
 
+// GET '/dashboard'
 router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
 
     // Pull the purchases off of the user document
+    User.findById(req.session.userId)
+        .exec(function (error, user) { //Execute the search
+            if (error) {
+                return res.redirect('/');
+            } else {
+                // If no error render dashboard and pass user object in model
+                return res.render('dashboard', {user});
+            }
+        });
 
-
-    return res.render('dashboard');
 });
 
+// GET '/sign-in'
 router.get('/sign-in', mid.checkAlreadyLoggedIn, function(req, res, next) {
     return res.render('sign-in');
 });
 
+// GET '/sign-up'
 router.get('/sign-up', mid.checkAlreadyLoggedIn, function(req, res, next) {
     return res.render('sign-up');
 });
