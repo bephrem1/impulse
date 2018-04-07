@@ -8,8 +8,44 @@
         <% include ../views/partials/nav %>
 
         <div class = "container">
+            <div class = "row">
+            <div class = "col-md-4"><div class = "stat">
+                <h3>Impulses This Month</h3>
+                <div class = "inner-stat">
+                    <h1>12</h1>
+                </div>
+            </div></div>
+            <div class = "col-md-4"><div class = "stat">
+                <h3>Dollars Saved</h3>
+                <div class = "inner-stat">
+                    <h1>$44</h1>
+                </div>
+            </div></div>
+            <div class = "col-md-4"><div class = "stat">
+                <h3>Total Purchases</h3>
+                <div class = "inner-stat">
+                    <h1>12</h1>
+                </div>
+            </div></div>
+            </div>
+            <div class = "row">
+                <div class = "col-md-6"><div class = "graph">
+                    Graph 1
+                </div></div>
+                <div class = "col-md-6"><div class = "graph">
+                    Graph 2
+                </div></div>
+            </div>
 
-            <canvas id="chart1" width="400" height="400"></canvas>
+            <div class = "analytics-card">
+                <h3>Individual analytics</h3>
+                <hr>
+                <div class = "entry">
+                    Entry 1
+                </div>
+            </div>
+          
+            <!-- <canvas id="chart1" width="400" height="400"></canvas> -->
 
         </div>
 
@@ -17,7 +53,7 @@
 
     </body>
 
-    <script>
+    <!-- <script>
 
     var ctx = document.getElementById("chart1").getContext('2d');
     var myBarChart = new Chart(ctx, {
@@ -50,5 +86,5 @@
     });
 
 
-    </script>
+    </script> -->
 </html>

@@ -53,6 +53,74 @@ h1, h2, h5{
     cursor: pointer;
 }
 
+/* GRAPHS */
+.graph {
+    position: relative;
+    max-height: 10vw;
+    height: 20vw;
+    max-width: 100%;
+    width: 100%;
+    padding: 25px;
+    margin: 0px;
+    margin-top: 25px;
+    background-color: var(--white);
+    color: var(--green);
+    border-radius: 4px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.1);
+}
+
+/* ANALYTICS */
+.analytics-card {
+    position: relative;
+    margin: 30px auto;
+    width: 100%;
+    padding: 25px 25px;
+    margin: 0px;
+    margin-top: 25px;
+    background-color: var(--white);
+    color: var(--green);
+    border-radius: 4px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.1);
+}
+
+.analytics-card h3{
+    font-size: 20px;
+}
+
+/* DASHBOARD CARDS */
+
+.inner-stat {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    margin: 8px;  
+}
+
+.stat {
+    position: relative;
+    max-height: 10vw;
+    height: 10vw;
+    max-width: 100%;
+    width: 100%;
+    padding: 15px 15px;
+    margin: 0;
+    margin-top: 25px;
+    background-color: var(--white);
+    color: var(--green);
+    border-radius: 4px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.1);
+}
+
+.stat h1{
+    font-size: 3vw;
+    text-align: right;
+    margin: 8px;
+}
+
+.stat h3{
+    font-size: 20px;
+}
+
 /* INDEX */
 .index-wrapper{
     position: relative;
@@ -143,6 +211,8 @@ h1, h2, h5{
 #signup-button:hover{
     cursor: pointer;
 }
+
+
 
 @media (max-width: 768px){
     .nav h1{
