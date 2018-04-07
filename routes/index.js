@@ -177,6 +177,26 @@ router.post('/sign-in', function(req, res, next) {
     }
 });
 
+// POST '/sign-in-extension'
+router.post('/sign-in-extension', function(req, res, next) {
+    if(req.body.email && req.body.password){
+
+        User.authenticate(req.body.email, req.body.password, function(error, user){
+            if(error || !user){
+                res.json({
+                    error: "error"
+                });
+            } else {
+                // User found
+
+                res.json({
+                    user
+                });
+            }
+        });
+    }
+});
+
 /*************************************************************************************/
 /*************************************************************************************/
 /*************************************************************************************/
