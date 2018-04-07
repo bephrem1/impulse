@@ -54,27 +54,93 @@ h1, h2, h5{
 }
 
 /* INDEX */
-
-.main-wrapper{
+.index-wrapper{
     position: relative;
     top: 5vh;
 }
 
-#main-chart{
+#index-image{
     width: 70%;
     height: auto;
     border-radius: 4px;
 }
 
-.button-wrapper a{
+.index-button-wrapper a{
     color: var(--white) !important;
     padding: 8px 14px;
 }
 
-.button-wrapper a:hover{
+.index-button-wrapper a:hover{
     text-decoration: none;
     background-color: var(--white);
     color: var(--green) !important;
+    cursor: pointer;
+}
+
+/* SIGN IN */
+.signin-header{
+    margin-top: 20px;
+}
+
+.signin-wrapper{
+    margin-top: 20vh;
+    padding: 50px 10px;
+    background-color: var(--white);
+    border-radius: 4px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.1);
+}
+
+.signin-wrapper h1{
+    font-family: "Pacifico";
+    color: var(--green);
+}
+
+#signin-button{
+    border: none;
+    background-color: var(--green) !important;
+}
+
+#signin-button:focus{
+    outline:0;
+}
+
+#signin-button:hover{
+    cursor: pointer;
+}
+
+#signin-link{
+    border: none;
+    background-color: var(--green) !important;
+}
+
+/* SIGN UP */
+.signup-header{
+    margin-top: 20px;
+}
+
+.signup-wrapper{
+    margin-top: 20vh;
+    padding: 50px 10px;
+    background-color: var(--white);
+    border-radius: 4px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.1);
+}
+
+.signup-wrapper h1{
+    font-family: "Pacifico";
+    color: var(--green);
+}
+
+#signup-button{
+    border: none;
+    background-color: var(--green) !important;
+}
+
+#signup-button:focus{
+    outline:0;
+}
+
+#signup-button:hover{
     cursor: pointer;
 }
 
