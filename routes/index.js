@@ -20,8 +20,22 @@ router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
             if (error) {
                 return res.redirect('/');
             } else {
+                let impulseSum = 0;
+                let impulseDollars = 0;
+
+                user.purchaseData.forEach(element => {
+                    if (element.wasPurchased == false){
+                        impulseSum++;
+                        impulseDollars += element.itemPrice;
+                    }
+                    
+                    
+                });
+
                 // If no error render dashboard and pass user object in model
-                return res.render('dashboard', {user});
+                return res.render('dashboard', {
+                    user, impulseDollars, impulseSum
+                });
             }
         });
 
