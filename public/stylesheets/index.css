@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,700');
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Roboto:300,500,700');
 
 :root{
     --black: #04080F;
@@ -22,12 +22,24 @@ h1, h2, h5{
     line-height: 50px;
 }
 
+.light{
+    font-weight: 300;
+}
+
+.medium{
+    font-weight: 400;
+}
+
 .bold{
     font-weight: 700;
 }
 
 .nav{
-    padding: 10px;
+    padding: 15px;
+}
+
+.nav-header{
+    font-family: "Pacifico";
 }
 
 .nav-item{
@@ -35,6 +47,29 @@ h1, h2, h5{
 }
 
 .nav-item:hover{
+    background-color: var(--white);
+    color: var(--green) !important;
+    cursor: pointer;
+}
+
+/* INDEX */
+
+.main-wrapper{
+    position: relative;
+    top: 5vh;
+}
+
+#main-chart{
+    width: 70%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.button-wrapper a{
+    padding: 8px 14px;
+}
+
+.button-wrapper a:hover{
     background-color: var(--white);
     color: var(--green) !important;
     cursor: pointer;
