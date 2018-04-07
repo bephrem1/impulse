@@ -12,11 +12,11 @@
             <div class = "col-md-4"><div class = "stat">
                 <h3>Impulses This Month</h3>
                 <div class = "inner-stat">
-                    <h1><%=impulseSum%></h1>
+                    <h1><%=impulseMonthCounter[11]%></h1>
                 </div>
             </div></div>
             <div class = "col-md-4"><div class = "stat">
-                <h3>Dollars Saved</h3>
+                <h3>Total Dollars Saved</h3>
                 <div class = "inner-stat">
                     <h1>$<%=impulseDollars%></h1>
                 </div>
@@ -30,7 +30,7 @@
             </div>
             <div class = "row">
                 <div class = "col-md-6"><div class = "graph">
-                    <canvas id="line-chart" width="800" height="450"></canvas>
+                    <canvas id="line-chart" width="800" height="500"></canvas>
                 </div></div>
                 <div class = "col-md-6"><div class = "graph">
                     Graph 2
@@ -43,7 +43,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Date</th>
-                            <th scope="col">Impulse?</th>
+                            <th scope="col">Bought</th>
                             <th scope="col">Name</th>
                             <th scope="col">Justification</th>
                             <th scope="col">Price</th>
@@ -57,7 +57,7 @@
                                     <%= d.toDateString().substring(4, 10) %>
                                 </th>
 
-                                <td><% if (!user.purchaseData[i].wasPurchased){ %>
+                                <td><% if (user.purchaseData[i].wasPurchased){ %>
                                             Yes
                                         <%} else { %>
                                             No
@@ -82,17 +82,21 @@
 
     <script>
 
+        let pmCounter = [<%= purchaseMonthCounter %>];
+        let imCounter = [<%= impulseMonthCounter %>];
+        let mlabel = [<%= monthBoundaries%>];
+
         var chart1 = new Chart(document.getElementById("line-chart"), {
             type: 'line',
             data: {
-                labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+                labels: mlabel,
                 datasets: [{ 
-                    data: [86,114,106,106,107,111,133,221,783,2478],
+                    data: pmCounter,
                     label: "Items Purchased",
                     borderColor: "#3e95cd",
                     fill: false
                 }, { 
-                    data: [282,350,411,502,635,809,947,1402,3700,5267],
+                    data: imCounter,
                     label: "Impulses Avoided",
                     borderColor: "#8e5ea2",
                     fill: false
@@ -106,6 +110,7 @@
                 }
             }
         });
+        console.log(chart1.data.datasets[0].data);
 
     </script>
 </html>
