@@ -79,20 +79,20 @@
                     <tbody class = "medium">
                         <% for (i = 0; i < cartSize; i++){ %>
                             <tr>
-                                <th scope="row">
+                                <th class = "light" scope="row">
                                     <% var d = new Date(user.purchaseData[i].purchaseDate * 1000); %>
                                     <%= d.toDateString().substring(4, 10) %>
                                 </th>
 
-                                <td><% if (user.purchaseData[i].wasPurchased){ %>
+                                <td class = "light"><% if (user.purchaseData[i].wasPurchased){ %>
                                             Yes
                                         <%} else { %>
                                             No
                                         <%}%>
                                 </td>
-                                <td><%= user.purchaseData[i].itemTitle %></td>
-                                <td><%= user.purchaseData[i].decisionReason %></td>
-                                <td>$<%= Math.trunc(user.purchaseData[i].itemPrice*100)/100 %></td>
+                                <td class = "light" ><%= user.purchaseData[i].itemTitle %></td>
+                                <td class = "light" ><%= user.purchaseData[i].decisionReason %></td>
+                                <td class = "light" >$<%= Math.trunc(user.purchaseData[i].itemPrice*100)/100 %></td>
                             </tr>
                         <% } %>
                     </tbody>
