@@ -57,15 +57,15 @@ h1, h2, h5{
 	text-shadow: none;
 }
 .nav-item:hover:before {
-	bottom: 100%;
-	top: 0;
+    bottom: 0%;
+	top: auto;
 	height: 100%;
 }
 .nav-item:before {
 	display: inline;
 	position: absolute;
 	left: 0px;
-	top: 0px;
+	bottom: 0px;
 	height: 0px;
 	width: 100%;
 	z-index: -1;
