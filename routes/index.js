@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../models/user');
+const Auth = require('../models/auth');
 const dateHelpers = require('../helpers/dateHelpers');
+const http = require('http');
+const mongoose = require('mongoose');
 
 const mid = require('../middleware/index');
 
@@ -182,22 +185,59 @@ router.post('/sign-in', function(req, res, next) {
 
 // POST '/sign-in-extension'
 router.post('/sign-in-extension', function(req, res, next) {
-    if(req.body.email && req.body.password){
+    if(req.body.email && req.body.password && req.body.ip){
 
         User.authenticate(req.body.email, req.body.password, function(error, user){
             if(error || !user){
-                res.json({
+                return res.json({
                     error: "error"
                 });
             } else {
                 // User found
-
-                res.json({
-                    user
+                // Hacky Solution: Save the id to the auth database and pull from separated components
+                let auth = new Auth({ip: req.body.ip, id: user._id});
+                auth.save(function (err, auth) {
+                    // Done. Respond with the user data.
+                    return res.json({
+                        user
+                    });
                 });
             }
         });
     }
+});
+
+// GET '/auth/:ip'
+router.get('/auth/:ip', function(req, res, next) {
+    const clientIp = req.params.ip;
+    console.log(clientIp);
+    Auth.findOne({ip: clientIp }, function (err, authDocument) {
+        if(err || authDocument === null){
+            return res.json({
+                userId: ""
+            });
+        }
+        // Return the user id for the auth'ed ip
+        return res.json({
+            userId: authDocument.id
+        });
+    });
+});
+
+// DELETE '/auth/:ip'
+router.delete('/auth/:ip', function(req, res, next) {
+    const clientIp = req.params.ip;
+    Auth.remove({ip: clientIp}).exec()
+        .then(result => {
+            res.json({
+                status: "success"
+            })
+        })
+        .catch(err => {
+            res.json({
+                status: "failure"
+            })
+        });
 });
 
 /*************************************************************************************/

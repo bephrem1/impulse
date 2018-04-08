@@ -45,6 +45,7 @@ h1, h2, h5{
 .nav-item{
     color: var(--white) !important;
     padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .nav-item:hover{
@@ -141,15 +142,19 @@ h1, h2, h5{
 }
 
 #index-image{
-    width: 70%;
+    width: 65%;
     height: auto;
-    border-radius: 4px;
+    border-radius: 6px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+    opacity: .95;
 }
 
 .index-button-wrapper a{
     color: var(--white) !important;
     padding: 8px 14px;
+    background-color: rgba(0, 0, 0, 0.1);
 }
+
 
 .index-button-wrapper a:hover{
     text-decoration: none;
@@ -225,7 +230,13 @@ h1, h2, h5{
     cursor: pointer;
 }
 
-
+.footer-text{
+    position: fixed;
+    width: 100%;
+    bottom: 8px;
+    left: 0;
+    margin: 0 auto;
+}
 
 @media (max-width: 768px){
     .nav h1{
