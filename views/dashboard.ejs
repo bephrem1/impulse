@@ -8,61 +8,66 @@
         <% include ../views/partials/nav %>
 
         <div class = "container">
+
+            <!-- Stats -->
             <div class = "row">
-            <div class = "col-md-4"><div class = "stat">
-                <h3>Impulses This Month</h3>
-                <div class = "inner-stat">
-                    <h1><%=impulseSum%></h1>
-                </div>
-            </div></div>
-            <div class = "col-md-4"><div class = "stat">
-                <h3>Dollars Saved</h3>
-                <div class = "inner-stat">
-                    <h1>$<%=impulseDollars%></h1>
-                </div>
-            </div></div>
-            <div class = "col-md-4"><div class = "stat">
-                <h3>Total Purchases</h3>
-                <div class = "inner-stat">
-                    <h1><%=user.purchaseData.length-impulseSum%></h1>
-                </div>
-            </div></div>
-            </div>
-            <div class = "row">
-                <div class = "col-md-6"><div class = "graph">
-                    <canvas id="line-chart" width="800" height="450"></canvas>
+                <div class = "col-md-4"><div class = "stat">
+                    <h3>Impulses Avoided This Month</h3>
+                    <div class = "inner-stat">
+                        <h1 class = "light" style="color: var(--red);"><%=impulseMonthCounter[11]%></h1>
+                    </div>
                 </div></div>
-                <div class = "col-md-6"><div class = "graph">
-                    Graph 2
+                <div class = "col-md-4"><div class = "stat">
+                    <h3>Total Dollars Saved</h3>
+                    <div class = "inner-stat">
+                        <h1 class = "light">$<%=impulseDollars%></h1>
+                    </div>
+                </div></div>
+                <div class = "col-md-4"><div class = "stat">
+                    <h3>Total Purchases</h3>
+                    <div class = "inner-stat">
+                        <h1 class = "light" style="color: var(--darkblue);"><%=cartSize-impulseSum%></h1>
+                    </div>
                 </div></div>
             </div>
 
+            <!-- Charts -->
+            <div class = "row">
+                <div class = "col-md-6"><div class = "graph">
+                    <canvas id="line-chart" width="800" height="500"></canvas>
+                </div></div>
+                <div class = "col-md-6"><div class = "graph">
+                    <canvas id="doughnut-chart" width="800" height="500"></canvas>
+                </div></div>
+            </div>
+
+            <!-- Data Table -->
             <div class = "analytics-card">
                 <h3>Individual Item Analytics</h3>
                 <table class="table table-hover table-responsive">
                     <thead>
                         <tr>
                             <th scope="col">Date</th>
-                            <th scope="col">Impulse?</th>
+                            <th scope="col">Bought</th>
                             <th scope="col">Name</th>
                             <th scope="col">Justification</th>
                             <th scope="col">Price</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <% for (i = 0; i < user.purchaseData.length; i++){ %>
+                    <tbody class = "medium">
+                        <% for (i = 0; i < cartSize; i++){ %>
                             <tr>
                                 <th scope="row">
                                     <% var d = new Date(user.purchaseData[i].purchaseDate * 1000); %>
                                     <%= d.toDateString().substring(4, 10) %>
                                 </th>
 
-                                <td><% if (!user.purchaseData[i].wasPurchased){ %>
+                                <td><% if (user.purchaseData[i].wasPurchased){ %>
                                             Yes
                                         <%} else { %>
                                             No
                                         <%}%>
-                                </td> 
+                                </td>
                                 <td><%= user.purchaseData[i].itemTitle %></td>
                                 <td><%= user.purchaseData[i].decisionReason %></td>
                                 <td>$<%= user.purchaseData[i].itemPrice %></td>
@@ -71,8 +76,8 @@
                     </tbody>
                 </table>
             </div>
-          
-            
+
+
 
         </div>
 
@@ -82,19 +87,30 @@
 
     <script>
 
+        // Reads data from backend and stores to variables
+        let pmCounter = [<%= purchaseMonthCounter %>];
+        let imCounter = [<%= impulseMonthCounter %>];
+        let mlabel = [<%= monthBoundaries%>];
+
+        let iSum = <%= impulseSum%>;
+        let purchaseSum = <%=cartSize%> - iSum;
+
+        Chart.defaults.global.defaultFontFamily = 'Roboto';
+        Chart.defaults.global.defaultFontSize = 14;
+
         var chart1 = new Chart(document.getElementById("line-chart"), {
             type: 'line',
             data: {
-                labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
-                datasets: [{ 
-                    data: [86,114,106,106,107,111,133,221,783,2478],
+                labels: mlabel,
+                datasets: [{
+                    data: pmCounter,
                     label: "Items Purchased",
-                    borderColor: "#3e95cd",
+                    borderColor: "#EF2D56",
                     fill: false
-                }, { 
-                    data: [282,350,411,502,635,809,947,1402,3700,5267],
+                }, {
+                    data: imCounter,
                     label: "Impulses Avoided",
-                    borderColor: "#8e5ea2",
+                    borderColor: "#1E467F",
                     fill: false
                 }
                 ]
@@ -103,9 +119,50 @@
                 title: {
                 display: true,
                 text: 'Impulses Avoided'
-                }
+                },
+                scales: {
+					xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Month'
+						}
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Items'
+                        },
+                        ticks: {
+                            beginAtZero: true,
+                            callback: function(value) {if (value % 1 === 0) {return value;}}
+                        }
+					}]
+				}
             }
         });
+
+        var chart2 = new Chart(document.getElementById("doughnut-chart"), {
+            type: 'doughnut',
+            data: {
+            labels: ["Total Items Purchased", "Total Impulses Avoided"],
+            datasets: [
+                {
+                label: "Items",
+                backgroundColor: ["#1E467F", "#EF2D56"],
+                data: [purchaseSum, iSum]
+                }
+            ]
+            },
+            options: {
+            title: {
+                display: true,
+                text: 'Items Added In Cart vs. Items Purchased'
+            }
+            }
+        });
+
 
     </script>
 </html>
