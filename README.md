@@ -1,5 +1,6 @@
 # Impulse
-<b>Impulse is a platform that mitigates impulsive spending and brings consciousness to consumerism.</b>
+<b>Impulse is a platform that mitigates impulsive spending and brings consciousness to consumerism.</b> </br>
+<b>Note:</b> The chrome extension's repo can be found [here](https://github.com/rwang99/impulse_extension).
 __________________________________________
 
 ## The Team: </br>
