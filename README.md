@@ -121,7 +121,13 @@ The Google Chrome Extension was...well a chrome extension. The whole team had li
 
 <a href="https://imgbb.com/"><img src="https://image.ibb.co/d079ux/hurdle4.png" alt="hurdle4" border="0" width="100" height="100"></a>
 #### Challenge #4:
-Contexts and sharing data. Since separate context, separate console.
+Contexts and sharing data. So the chrome extension has two components: the main dashboard that pops up when the extension icon is clicked (extension component) and the html that is injected into the webpage (webpage componenet). Here is the problem...**each component runs in a totally isolated context**...aka a variable name 'var1' set to 1 in the webpage componenet *does not exist* in the extension component's context.
+
+Since it is a separate context...*there is literally another whole console* for the extension component on top of the actual webpage's console. It took Michael and I nearly an hour and half to realize this was the root of our problems when we were working on setting up login (on the extension component) and data just wouldn't move between the files. We searched google chrome documentation for nearly 2 hours and exhaustively went through 10+ Stack Overflow article attempts at solutions as well as the official Google Chrome Extension docs on cross-extension messaging [found here](https://developer.chrome.com/apps/messaging).
+
+Nothing worked. No code worked. It was *really* frustrating.
+
+So call us crazy, call us naive developer...so be it...we decided to get creative and enginner our own (I think funny) solution to sharing data between the two isolated components. I will explain the solution that we used later but another challenge we faced...
 
 <a href="https://imgbb.com/"><img src="https://image.ibb.co/c02dMc/hurdle5.png" alt="hurdle5" border="0" width="100" height="100"></a>
 #### Challenge #5:
@@ -132,6 +138,10 @@ Importing libraries and global variable scope naming problems (hoisting). no npm
 Getting stitch to work
 
 ______________________________________________
+
+## Future Updates
+- Supporting more than just Amazon. Expanding support to other serviecs where impulsive purchases may take place online.
+- Remove tiny bugs that are still in some places
 
 ## Conclusion
 
