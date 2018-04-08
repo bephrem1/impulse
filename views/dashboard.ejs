@@ -11,20 +11,42 @@
 
             <!-- Stats -->
             <div class = "row">
-                <div class = "col-md-4"><div class = "stat">
+                <div class = "col-md-4"><div class = "stat" style="color: var(--red);">
                     <h3>Impulses Avoided This Month</h3>
-                    <div class = "inner-stat">
-                        <h1 class = "light" style="color: var(--red);"><%=impulseMonthCounter[11]%></h1>
+
+                    <div class = "icon-stat light">
+                            <h1 class = "icon"><i class="fa fa-smile-o"></i></h1>
                     </div>
+
+                    <div class = "inner-stat">
+                        <h1 class = "light">
+                            <%=impulseMonthCounter[11]%>
+                        </h1>
+                    </div>
+
                 </div></div>
                 <div class = "col-md-4"><div class = "stat">
                     <h3>Total Dollars Saved</h3>
-                    <div class = "inner-stat">
-                        <h1 class = "light">$<%=impulseDollars%></h1>
+
+                    <div class = "icon-stat light">
+                            <h1 class = "icon"><i class="fa fa-money"></i></h1>
                     </div>
+
+                    <div class = "inner-stat">
+                        <h1 class = "light">
+                            $<%=Math.trunc(impulseDollars*100)/100%>
+                        </h1>
+                    </div>
+
                 </div></div>
-                <div class = "col-md-4"><div class = "stat">
+
+                <div class = "col-md-4"><div class = "stat" style="color: var(--darkblue);">
                     <h3>Total Purchases</h3>
+
+                    <div class = "icon-stat light">
+                            <h1 class = "icon"><i class="fa fa-truck"></i></h1>
+                    </div>
+
                     <div class = "inner-stat">
                         <h1 class = "light" style="color: var(--darkblue);"><%=cartSize-impulseSum%></h1>
                     </div>
@@ -70,7 +92,7 @@
                                 </td>
                                 <td><%= user.purchaseData[i].itemTitle %></td>
                                 <td><%= user.purchaseData[i].decisionReason %></td>
-                                <td>$<%= user.purchaseData[i].itemPrice %></td>
+                                <td>$<%= Math.trunc(user.purchaseData[i].itemPrice*100)/100 %></td>
                             </tr>
                         <% } %>
                     </tbody>
@@ -105,12 +127,12 @@
                 datasets: [{
                     data: pmCounter,
                     label: "Items Purchased",
-                    borderColor: "#EF2D56",
+                    borderColor: "#1E467F",
                     fill: false
                 }, {
                     data: imCounter,
                     label: "Impulses Avoided",
-                    borderColor: "#1E467F",
+                    borderColor: "#EF2D56",
                     fill: false
                 }
                 ]

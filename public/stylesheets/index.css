@@ -99,6 +99,17 @@ h1, h2, h5{
     margin: 8px;
 }
 
+.icon-stat {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    margin-left: 10px;
+}
+
+.icon {
+    font-size: 5vw !important;
+}
+
 .stat {
     position: relative;
     max-height: 10vw;
@@ -116,7 +127,6 @@ h1, h2, h5{
 
 .stat h1{
     font-size: 3vw;
-    text-align: right;
     margin: 8px;
 }
 
