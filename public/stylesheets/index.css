@@ -238,6 +238,15 @@ h1, h2, h5{
     margin: 0 auto;
 }
 
+/* ABOUT */
+.about-wrapper{
+    padding: 20px;
+    color: var(--green);
+    background-color: var(--white);
+    border-radius: 4px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+}
+
 @media (max-width: 768px){
     .nav h1{
         text-align: center !important;
