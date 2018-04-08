@@ -11,13 +11,15 @@ Written in Javascript.
 
 Timeline: 4/7/18 Started, 4/8/18 Completed
 
-**Mission:** 
 ___
+
+***Mission*** 
 
 Bring Consciousness To Consumerism.
 
-**The Idea:** 
 ___
+
+***The Idea***
 
 Online one-click purchases often lead to buyers making impulse purchases that are
 unnecessary or that they may later regret. Our goal is to protect buyers and allow them to see how
@@ -25,8 +27,9 @@ much they can save with conscious spending. We also give users the ability to co
 for purchasing a product against how they feel about the purchase present day. We aim to decrease mindless
 spending for a more fiscally responsible life. 
 
-**Components**
 ___
+
+***Components***
 
 - The first thing we had to design was the main website. We need to implement user authentication, user authorization and data analytics. This site would be the central hub of impluse, containg a dashboard that generated analytics for each user based on their activity. This is what it looks like:
 
@@ -52,5 +55,7 @@ This is what the extension popup looks like:
 
 <br>
 
-**Features:**
+___
+
+***Features***
 - Users can create accounts, login to the dashboard and extension, and keep track of their impulse purchases and analytics associated with them
