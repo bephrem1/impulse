@@ -85,9 +85,9 @@
                                 </th>
 
                                 <td class = "light"><% if (user.purchaseData[i].wasPurchased){ %>
-                                            Yes
+                                            <i class="fas fa-check"></i>
                                         <%} else { %>
-                                            No
+                                            <i class="fas fa-times"></i>
                                         <%}%>
                                 </td>
                                 <td class = "light" ><%= user.purchaseData[i].itemTitle %></td>
