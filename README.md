@@ -1,6 +1,6 @@
 # Impulse
 <b>Impulse is a platform that mitigates impulsive spending and brings consciousness to consumerism.</b> </br>
-<b>Note:</b> The chrome extension's repo can be found [here](https://github.com/rwang99/impulse_extension).
+<b>Note:</b> The chrome extension's repo can be found [here](https://github.com/rwang99/impulse_extension). The web app's repo can be found [here](https://github.com/bephrem1/impulse)
 __________________________________________
 
 ## The Team: </br>
@@ -193,11 +193,13 @@ Technology.
 * [EJS](http://ejs.co/) - Dynamic Templating and Interpolation
 * [Bootstrap](https://getbootstrap.com/) - Bootstrap for Frontend
 * [jQuery](https://jquery.com/) - Client-Side Document Object Model (DOM) Manipulations and Asynchronous JavaScript & XML (AJAX) Requests
+* [Chart.js](https://www.chartjs.org/) - Frontend chart library
 * [npm](https://www.npmjs.com/) - Package Manager
 * [WebStorm](https://www.jetbrains.com/webstorm/) - WebStorm IDE
 * [Atom](https://atom.io/) - Text Editor
+* [VSCode](https://code.visualstudio.com/) - Text Editor
 
 ## Credits
 * [Flaticon](https://www.flaticon.com/) - Icon assets
-* The guys at the MongoDB booth. They were super friendly and helped us with some issues. We 💖 you.
+* The guys at the MongoDB booth. They were super friendly and helped us with some issues. We <3 you.
 * Ben - You made a really sexy readme. Good job.
