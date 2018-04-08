@@ -44,43 +44,46 @@ The initial version is a success if we can: </br>
 <b>2.)</b> Collect that behavioral data and process it </br>
 <b>3.)</b> Present that data to the user so that they can learn about how they spend and where they can improve </br>
 
+### Screenshots:
+Before we get into the technical explanation of how this project was created, what is good about, what is technically unstable about it, etc. We will look at some pretty screenshots 📸 📸 📸 
 
+#### Web Portal
 
-
-
-
-
-
-
-
-# Components
-
-Homepage
 <img src = "https://i.imgur.com/MGHxyWw.png">
 
-- The first thing we had to design was the main website. We need to implement user authentication, user authorization and data analytics. This site would be the central hub of impluse, containg a dashboard that generated analytics for each user based on their activity. This is what it looks like:
-
-<br> 
+The first thing we had to design was the main website. We need to implement user authentication, user authorization and data analytics. This site would be the central hub of impluse, containg a dashboard that generated analytics for each user based on their activity. This is what it looks like:
 
 <img src="https://preview.ibb.co/kEwkHH/Screen_Shot_2018_04_08_at_1_43_23_AM.png">
 
-<br>
+#### Chrome Extension
 
-- We also had to create a chrome extension that had two main components to it as well. The chrome extension needs a modal that acted as a middleman between the consumer and the ecommerce cite. We wanted to pause the user's activity, and help them really think about what actions they were about to take. We also had to create the chrome extension pop up section that allow a user to login (so their information could be stored and pushed to the database). 
+We also had to create a chrome extension that had two main components to it as well. The chrome extension needs a modal that acted as a middleman between the consumer and the ecommerce cite. We wanted to pause the user's activity, and help them really think about what actions they were about to take. We also had to create the chrome extension pop up section that allow a user to login (so their information could be stored and pushed to the database). 
 
-<br>
-
-This is what the modal looks like:
+Here is what the modal looks like:
 
 <img src="https://preview.ibb.co/fZrfjx/Screen_Shot_2018_04_08_at_1_45_05_AM.png">
 
-<br>
-
-This is what the extension popup looks like:
+Here is what the extension popup looks like:
 
 <img src="https://preview.ibb.co/cCvO4x/Screen_Shot_2018_04_08_at_1_47_19_AM.png">
 
-<br>
+#### Challenges Encountered
 
-# Features
-- Users can create accounts, login to the dashboard and extension, and keep track of their impulse purchases and analytics associated with them
+**1.) Lorem Ipsum**:
+
+## Built With
+
+* [Node.js](https://nodejs.org/en/) - Event-Driver Server-side Platform used
+* [Express.js](https://expressjs.com/) - Node.js web application framework used
+* [MongoDB](https://www.mongodb.com/) - MongoDB for Database
+* [MongoDB Stitch](https://www.mongodb.com/cloud/stitch) - Backend as a Service for executing frontend db operations
+* [Bootstrap](https://getbootstrap.com/) - Bootstrap for Frontend
+* [jQuery](https://jquery.com/) - Client-Side Document Object Model (DOM) Manipulations and Asynchronous JavaScript & XML (AJAX) Requests
+* [npm](https://www.npmjs.com/) - Package Manager
+* [WebStorm](https://www.jetbrains.com/webstorm/) - WebStorm IDE
+* [Atom](https://atom.io/) - Text Editor
+
+## Credits
+* [Flaticon](https://www.flaticon.com/) - Icon assets
+* The guys at the MongoDB booth. They were super friendly and helped us with some issues. We 💖 you.
+* Ben - You made a really sexy readme. Good job.
