@@ -122,7 +122,7 @@ The Google Chrome Extension was...well a chrome extension. The whole team had li
 
 <a href="https://imgbb.com/"><img src="https://image.ibb.co/d079ux/hurdle4.png" alt="hurdle4" border="0" width="100" height="100"></a>
 #### Challenge #4:
-Contexts and sharing data. So the chrome extension has two components: the main dashboard that pops up when the extension icon is clicked (extension component) and the html that is injected into the webpage (webpage componenet). Here is the problem...**each component runs in a totally isolated context**...aka a variable name 'var1' set to 1 in the webpage componenet *does not exist* in the extension component's context.
+Contexts and sharing data. So the chrome extension has two components: the main dashboard that pops up when the extension icon is clicked (extension component) and the html that is injected into the webpage (webpage component). Here is the problem...**each component runs in a totally isolated context**...aka a variable name 'var1' set to 1 in the webpage component *does not exist* in the extension component's context.
 
 Since it is a separate context...*there is literally another whole console* for the extension component on top of the actual webpage's console. It took Michael and I nearly an hour and half to realize this was the root of our problems when we were working on setting up login (on the extension component) and data just wouldn't move between the files. We searched google chrome documentation for nearly 2 hours and exhaustively went through 10+ Stack Overflow article attempts at solutions as well as the official Google Chrome Extension docs on cross-extension messaging [found here](https://developer.chrome.com/apps/messaging).
 
@@ -144,7 +144,7 @@ Importing libraries and global variable scope naming problems. The biggest probl
 
 You will not get a specific line that your code if failing on. You will only see something resolve as undefined and have no reason why and all you can do is move script files around and rename things until the problem resolves. This happened when we were loading the [MongoDB Stitch](https://www.mongodb.com/cloud/stitch) minified js. It had variable names in it that when loaded after certain scripts led to the script being rendered useless and throwing an error internally.
 
-We found that issue just from speculation and it turned out to solve the problem. On top of that when working with the Chrome Extension we could not make user of npm and require('') statements in the way we could easily import and manage libraries on our Node server. I don't personally know too much about importing libraries into js files so it was a challenge working with moving data around different files and working with libraries.
+We found that issue just from speculation and it turned out to solve the problem. On top of that when working with the Chrome Extension we could not make use of npm and require('') statements in the way we could easily import and manage libraries on our Node server. I don't personally know too much about importing libraries into js files so it was a challenge working with moving data around different files and working with libraries.
 
 <a href="https://imgbb.com/"><img src="https://image.ibb.co/kA93nH/hurdle6.png" alt="hurdle6" border="0" width="100" height="100"></a>
 #### Challenge #6:
