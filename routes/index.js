@@ -75,13 +75,11 @@ router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
                     });
                 }
 
-                console.log(impulseMonthCounter);
-                console.log(purchaseMonthCounter);
 
                 for (i = 0; i < 12; i++){
-                    console.log(monthBoundaries[i]);
                     monthBoundaries[i] = monthBoundaries[i].getMonth()+1;
                 }
+                
                 // If no error render dashboard and pass user object in model
                 
                 monthBoundaries = monthBoundaries.reverse();
