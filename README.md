@@ -3,9 +3,9 @@
 __________________________________________
 
 ## The Team: </br>
-<b>Michael Weinberger:</b> The Frontend Wizard </br>
+<b>[Michael Weinberger:](https://github.com/mwein99)</b> The Frontend Wizard </br>
 <b>Benyam Ephrem:</b> The [Mongod](https://docs.mongodb.com/manual/reference/program/mongod/) (aka the backend guy) </br>
-<b>Richard Wang:</b> The Company Intern (he does everything) </br>
+<b>[Richard Wang:](https://github.com/rwang99)</b> The Company Intern (he does everything) </br>
 
 **School Year:** All Freshman @ University of Maryland (class of 2021) </br>
 
@@ -74,6 +74,8 @@ Here is what the extension popup looks like:
 
 <img src="https://preview.ibb.co/cCvO4x/Screen_Shot_2018_04_08_at_1_47_19_AM.png">
 
+______________________________________________
+
 ### The Technical Explanation
 
 <a href="https://imgbb.com/"><img src="https://image.ibb.co/iBgfjx/professor.png" alt="professor" border="0" width="100" height="100"></a>
@@ -128,6 +130,24 @@ Importing libraries and global variable scope naming problems (hoisting). no npm
 <a href="https://imgbb.com/"><img src="https://image.ibb.co/kA93nH/hurdle6.png" alt="hurdle6" border="0" width="100" height="100"></a>
 #### Challenge #6:
 Getting stitch to work
+
+______________________________________________
+
+## Conclusion
+
+<a href="https://imgbb.com/"><img src="https://image.ibb.co/c5vCEx/notebook.png" alt="notebook" border="0" width="100" height="100"></a>
+
+Despite all of the technical challenges that we faced I am proud of my team and I. We had our arguments, we made our naive decisions, we insulted each other, we complimented each other, we had fun, and we created the idea that we had set out to create. There is nothing else like a hackathon environment where it is just pure *focus* at least for me. Just the human and the machine. A clean slate.
+
+I used to believe that I knew everything but what I have realized overtime is that everyone has their great competencies. I am pretty competent with Node.js and MongoDB and have seen so many ways a server can crash that many bugs I just know instantly like it is common knowledge. But I'm weak at some aspects of frontend.
+
+This is where Michael filled the gap. He is excellent at frontend and seeing where things can go wronng there and where solutions can be found. Richard is also very competent at this and is a critical thinker. These are things that I cannot do myself and can do much better working with individuals with said competence.
+
+Basically, when we can find an intersection between these specials skills we have the recipe to create something elegant...something that matters. When team members support each other and see where one can excel and where they themselves fit in and contribute...it just creates an environment where everyone feels like they have a part and they matter just as much as the next person.
+
+And this is what I think we learned during Bitcamp. We all learned, we persevered through the insurmountable, grew as people, and had a good time doing what we have dedicated so much of our lives to.
+
+Coding, Designing, Creating. The Art of Problem Solving.
 
 ## Built With
 
