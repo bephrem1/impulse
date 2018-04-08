@@ -5,7 +5,7 @@ __________________________________________
 ## The Team: </br>
 <b>[Michael Weinberger:](https://github.com/mwein99)</b> The Frontend Wizard </br>
 <b>[Benyam Ephrem:](https://github.com/bephrem1)</b> The [Mongod](https://docs.mongodb.com/manual/reference/program/mongod/) (aka the backend guy) </br>
-<b>[Richard Wang:](https://github.com/rwang99)</b> The Company Intern (he does everything) </br>
+<b>[Richard Wang:](https://github.com/rwang99)</b> Mr. Versatile (the man does everything) </br>
 
 **School Year:** All Freshman @ University of Maryland (class of 2021) </br>
 
