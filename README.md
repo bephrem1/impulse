@@ -145,9 +145,11 @@ This is where Michael filled the gap. He is excellent at frontend and seeing whe
 
 Basically, when we can find an intersection between these specials skills we have the recipe to create something elegant...something that matters. When team members support each other and see where one can excel and where they themselves fit in and contribute...it just creates an environment where everyone feels like they have a part and they matter just as much as the next person.
 
-And this is what I think we learned during Bitcamp. We all learned, we persevered through the insurmountable, grew as people, and had a good time doing what we have dedicated so much of our lives to.
+I could ask for nothing more than the teammates that I believe in and trust. And the trust that you give is as important as the trust you get in return.
 
-Coding, Designing, Creating. The Art of Problem Solving.
+And this is what I think we learned during Bitcamp. We learned to cooperate, we persevered through the insurmountable, grew as people, and had a good time doing what we have dedicated so much of our lives to.
+
+Technology.
 
 ## Built With
 
