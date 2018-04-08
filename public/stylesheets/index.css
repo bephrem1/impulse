@@ -170,6 +170,7 @@ h1, h2, h5{
     height: auto;
     border-radius: 6px;
     opacity: .95;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
 }
 
 .index-button-wrapper a {
