@@ -85,7 +85,34 @@ The hackathon is a very rushed and intense process so yes...the code isn't perfe
 I will be walking through the components and just be looking at the code and explain what is happening as I go.
 
 #### The Web Portal
-The web portal runs on a Node.js and uses Express for serving static assets and managing endpoints that the chrome extension and web portal both use for access.
+The web portal runs on a Node.js and uses Express for serving static assets and managing endpoints that the chrome extension and web portal both use for access. We create a connection to the remote mongo database, partition off session data into its own data store so that it doesn't take up server RAM using [connect-mongo](https://www.npmjs.com/package/connect-mongo), configure global middleware, add error handlers, and start the server. We also extracted all endpoints into their own routes file to make things easier to work with.
+
+<a href="https://imgbb.com/"><img src="https://image.ibb.co/e7KKBc/hurdle1.png" alt="hurdle1" border="0" width="100" height="100"></a>
+#### Challenge #1:
+When designing the endpoints we had to decide if the Node server would just heavily serve the web portal (pulling db data, passing it in the model to the view, rendering the view) or be more system oriented (serve as a RESTful API that served JSON to authenticated users and both the extension and web portal would send requests to it for the data they need).
+
+In short, we kind of did both just to get things working and up and running. It was hard to decide. So we started out with the former and later when designing the chrome extension (which we did 2nd) we realized that the latter was a better solution to avoid repeated code. The key here is that we know about this and kept in mind to make no operations too tightly coupled so later changes can be made easily.
+
+Anyway, yes, so we have basic routes for rendering pages. We also have custom middleware that runs on the '/dashboard', '/sign-in', and 'sign-up' pages to ensure that: </br>
+
+<b>1.)</b> If a user is signed in they don't need to sign-up or sign-in. They can be redirected to the dashboard if they hit that endpoint. </br>
+<b>2.)</b> If they aren't signed in then they can't see the dashboard. Send them to the sign-in page. </br>
+
+For sign-up and authentication we would simple get the user to sign up with email and password. The password is hashed in a pre-save hook (hook that runs before the document is saved) with 13 rounds of [Bcrypt](https://www.npmjs.com/package/bcrypt) (which takes about 1 second to make a pretty secure hash) and saved to the database. Upon signup the unique value on the mongo document '\_id' is used to create a session cookie that is checked for to ensure authentication (middleware uses this global value). The 'userId' value is globally avaliable to all views for consumption via the res.locals object. For signing in we simply hash the password entered and compare it to what the database holds.
+
+<a href="https://imgbb.com/"><img src="https://image.ibb.co/hH0yMc/hurdle2.png" alt="hurdle2" border="0" width="100" height="100"></a>
+#### Challenge #2:
+So for me (Ben) a challenge was working with [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and deciding what the database schema would be. For previous projects I used services like [mLab](https://mlab.com/) for MongoDB. I had to learn how to create a cluster, hook up the cluster to a Stitch Application, setting permissions, connecting to the cluster's shards and visualizing the db with [RoboMongo](https://robomongo.org/)...it was a pain because each component would have a different version of the MongoDB driver (between my terminal, the [mongoose](https://www.npmjs.com/package/mongoose) library, RoboMongo, etc.). But eventually I SSH'ed in and could ensure login worked, seed some documents with purchase data, and just view the database to work with it.
+
+I kept the purchase data on the user document for simplicity but going back I might possibly reconsider that and move the purchase data into its own collection and map the documents to user documents. Then again it really depends on how much data we intend a user document to store and unnecessarily splitting the data into 2 separate but linked documents might just be overkill. It was just something that I had to mill over. Continuing on...yes, we also have the public folder that holds images, js, and stylesheets too.
+
+<a href="https://imgbb.com/"><img src="https://image.ibb.co/ntUuSH/hurdle3.png" alt="hurdle3" border="0" width="100" height="100"></a>
+#### Challenge #3:
+For the frontend we had to decide between using [Angular](https://angular.io/) and [EJS](http://ejs.co/) for dynamic templating. We just went with the lightweight solution of EJS since we would have a relitively simple dashboard with graphs and tables of course. I personally like Angular better since it is a more natural solution to dynamic web pages but EJS sufficed for our purposes.
+
+Next we will talk about the Chrome Extension. This is the part that caused more of a problem since the whole team was pretty inexperienced in making chrome extensions and how the environment would behave. Here is a chart I made that describes this (as well as my whole existence spent programming):
+
+<a href="https://ibb.co/gXGKux"><img src="https://preview.ibb.co/g97QZx/Screen_Shot_2018_04_08_at_4_31_51_AM.png" alt="Screen_Shot_2018_04_08_at_4_31_51_AM" border="0" width="500" height="500"></a>
 
 #### The Chrome Extension
 The Google Chrome Extension was...well a chrome extension.
@@ -97,6 +124,7 @@ The Google Chrome Extension was...well a chrome extension.
 * [MongoDB](https://www.mongodb.com/) - MongoDB for Database
 * [MongoDB Stitch](https://www.mongodb.com/cloud/stitch) - Backend as a Service for executing frontend db operations
 * [RoboMongo](https://robomongo.org/) - MongoDB GUI for Database Seeding, Cluster Visualization, & Testing
+* [EJS](http://ejs.co/) - Dynamic Templating and Interpolation
 * [Bootstrap](https://getbootstrap.com/) - Bootstrap for Frontend
 * [jQuery](https://jquery.com/) - Client-Side Document Object Model (DOM) Manipulations and Asynchronous JavaScript & XML (AJAX) Requests
 * [npm](https://www.npmjs.com/) - Package Manager
