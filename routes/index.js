@@ -23,6 +23,8 @@ router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
                 let impulseSum = 0;
                 let impulseDollars = 0;
 
+                let cartSize = 0;
+
                 var monthBoundaries = [
                     new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date()
                 ];
@@ -48,27 +50,30 @@ router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
                 let label = [0,1,2,3,4,5,6,7,8,9,10,11];
                 
                 // Iterates through purchasedata
-                user.purchaseData.forEach(element => {
-                    if (element.wasPurchased == false){
-                        impulseSum ++;
-                        impulseDollars += element.itemPrice;
-                    }
-
-                    let purchaseD = new Date(element.purchaseDate * 1000);
-                    for (i = 0; i < 11; i++){
-                        // If the current purchasedata lies within the time range
-                        if (purchaseD >= monthBoundaries[i]){
-                            // Adds to the relevant counter array
-                            if (!element.wasPurchased){
-                                impulseMonthCounter[i]++;
-                            } else {
-                                purchaseMonthCounter[i]++;
-                            }
-                            break;
+                if (user){
+                    cartSize = user.purchaseData.length;
+                    user.purchaseData.forEach(element => {
+                        if (element.wasPurchased == false){
+                            impulseSum ++;
+                            impulseDollars += element.itemPrice;
                         }
-                    }
 
-                });
+                        let purchaseD = new Date(element.purchaseDate * 1000);
+                        for (i = 0; i < 11; i++){
+                            // If the current purchasedata lies within the time range
+                            if (purchaseD >= monthBoundaries[i]){
+                                // Adds to the relevant counter array
+                                if (!element.wasPurchased){
+                                    impulseMonthCounter[i]++;
+                                } else {
+                                    purchaseMonthCounter[i]++;
+                                }
+                                break;
+                            }
+                        }
+
+                    });
+                }
 
                 console.log(impulseMonthCounter);
                 console.log(purchaseMonthCounter);
@@ -85,7 +90,7 @@ router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
 
                 // impulseSum = impulseMonthCounter[0];
                 return res.render('dashboard', {
-                    user, impulseDollars, impulseSum, purchaseMonthCounter, impulseMonthCounter, monthBoundaries, label
+                    user, impulseDollars, impulseSum, cartSize, purchaseMonthCounter, impulseMonthCounter, monthBoundaries, label
                 });
             }
         });

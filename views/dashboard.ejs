@@ -26,7 +26,7 @@
                 <div class = "col-md-4"><div class = "stat">
                     <h3>Total Purchases</h3>
                     <div class = "inner-stat">
-                        <h1 class = "light" style="color: var(--darkblue);"><%=user.purchaseData.length-impulseSum%></h1>
+                        <h1 class = "light" style="color: var(--darkblue);"><%=cartSize-impulseSum%></h1>
                     </div>
                 </div></div>
             </div>
@@ -54,8 +54,8 @@
                             <th scope="col">Price</th>
                         </tr>
                     </thead>
-                    <tbody class = "light">
-                        <% for (i = 0; i < user.purchaseData.length; i++){ %>
+                    <tbody class = "medium">
+                        <% for (i = 0; i < cartSize; i++){ %>
                             <tr>
                                 <th scope="row">
                                     <% var d = new Date(user.purchaseData[i].purchaseDate * 1000); %>
@@ -93,7 +93,7 @@
         let mlabel = [<%= monthBoundaries%>];
 
         let iSum = <%= impulseSum%>;
-        let purchaseSum = <%=user.purchaseData.length%> - iSum;
+        let purchaseSum = <%=cartSize%> - iSum;
 
         var chart1 = new Chart(document.getElementById("line-chart"), {
             type: 'line',
