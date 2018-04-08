@@ -17,8 +17,6 @@ ___
 
 Bring Consciousness To Consumerism.
 
-___
-
 # The Idea
 
 Online one-click purchases often lead to buyers making impulse purchases that are
@@ -26,8 +24,6 @@ unnecessary or that they may later regret. Our goal is to protect buyers and all
 much they can save with conscious spending. We also give users the ability to compare their justifications
 for purchasing a product against how they feel about the purchase present day. We aim to decrease mindless
 spending for a more fiscally responsible life. 
-
-___
 
 # Components
 
@@ -54,8 +50,6 @@ This is what the extension popup looks like:
 <img src="https://preview.ibb.co/cCvO4x/Screen_Shot_2018_04_08_at_1_47_19_AM.png">
 
 <br>
-
-___
 
 # Features
 - Users can create accounts, login to the dashboard and extension, and keep track of their impulse purchases and analytics associated with them
