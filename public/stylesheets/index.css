@@ -57,8 +57,8 @@ h1, h2, h5{
 /* GRAPHS */
 .graph {
     position: relative;
-    /* max-height: 100%; */
-    height: 95%;
+    max-height: 93%;
+    height: 93%;
     max-width: 100%;
     width: 100%;
     padding: 25px;
@@ -67,7 +67,7 @@ h1, h2, h5{
     background-color: var(--white);
     color: var(--green);
     border-radius: 4px;
-    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
 }
 
 /* ANALYTICS */
@@ -75,6 +75,7 @@ h1, h2, h5{
     position: relative;
     margin: 30px auto;
     width: 100%;
+    height: 100%;
     padding: 25px 25px;
     margin: 0px;
     margin-top: 25px;
@@ -82,7 +83,7 @@ h1, h2, h5{
     background-color: var(--white);
     color: var(--green);
     border-radius: 4px;
-    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
 }
 
 .analytics-card h3{
@@ -110,7 +111,7 @@ h1, h2, h5{
     background-color: var(--white);
     color: var(--green);
     border-radius: 4px;
-    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
 }
 
 .stat h1{

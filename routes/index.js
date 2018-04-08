@@ -23,18 +23,69 @@ router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
                 let impulseSum = 0;
                 let impulseDollars = 0;
 
+                var monthBoundaries = [
+                    new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date()
+                ];
+
+                // Frequency counters
+                var impulseMonthCounter = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+                var purchaseMonthCounter = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+                let today = new Date();
+                let curMonth = today.getMonth();
+                
+                // Adds date boundaries separated by months
+                for (i = 0; i < 12; i++){
+                    if (curMonth-i < 0){
+                        monthBoundaries[i].setMonth(12+curMonth-i);
+                        monthBoundaries[i].setFullYear(today.getFullYear()-1);
+                    } else {
+                        monthBoundaries[i].setMonth(curMonth-i);
+                    }
+                    monthBoundaries[i].setDate(1);
+                }
+
+                let label = [0,1,2,3,4,5,6,7,8,9,10,11];
+                
+                // Iterates through purchasedata
                 user.purchaseData.forEach(element => {
                     if (element.wasPurchased == false){
-                        impulseSum++;
+                        impulseSum ++;
                         impulseDollars += element.itemPrice;
                     }
-                    
-                    
+
+                    let purchaseD = new Date(element.purchaseDate * 1000);
+                    for (i = 0; i < 11; i++){
+                        // If the current purchasedata lies within the time range
+                        if (purchaseD >= monthBoundaries[i]){
+                            // Adds to the relevant counter array
+                            if (!element.wasPurchased){
+                                impulseMonthCounter[i]++;
+                            } else {
+                                purchaseMonthCounter[i]++;
+                            }
+                            break;
+                        }
+                    }
+
                 });
 
+                console.log(impulseMonthCounter);
+                console.log(purchaseMonthCounter);
+
+                for (i = 0; i < 12; i++){
+                    console.log(monthBoundaries[i]);
+                    monthBoundaries[i] = monthBoundaries[i].getMonth()+1;
+                }
                 // If no error render dashboard and pass user object in model
+                
+                monthBoundaries = monthBoundaries.reverse();
+                purchaseMonthCounter = purchaseMonthCounter.reverse();
+                impulseMonthCounter = impulseMonthCounter.reverse();
+
+                // impulseSum = impulseMonthCounter[0];
                 return res.render('dashboard', {
-                    user, impulseDollars, impulseSum
+                    user, impulseDollars, impulseSum, purchaseMonthCounter, impulseMonthCounter, monthBoundaries, label
                 });
             }
         });
