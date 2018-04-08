@@ -14,6 +14,10 @@ __________________________________________
 ## The Event: </br>
 [BitCamp 2018](https://bit.camp/)
 
+## Challenges Entered: </br>
+Best Financial Hack - <b>Capital One</b> </br>
+Best Use of MongoDB Stitch - <b>MongoDB</b>
+
 ## The Mission: </br>
 Bring Consciousness To Consumerism.
 
@@ -45,7 +49,10 @@ The initial version is a success if we can: </br>
 <b>3.)</b> Present that data to the user so that they can learn about how they spend and where they can improve </br>
 
 ### Screenshots:
-Before we get into the technical explanation of how this project was created, what is good about, what is technically unstable about it, etc. We will look at some pretty screenshots 📸 📸 📸 
+
+<a href="https://imgbb.com/"><img src="https://image.ibb.co/mQavHH/photo_camera.png" alt="photo_camera" border="0" width="100" height="100"></a>
+
+Before we get into the technical explanation (to scare you away) of how this project was created, what is good about it, what is technically unstable about it, etc. We will look at some pretty screenshots:
 
 #### Web Portal
 
@@ -67,9 +74,21 @@ Here is what the extension popup looks like:
 
 <img src="https://preview.ibb.co/cCvO4x/Screen_Shot_2018_04_08_at_1_47_19_AM.png">
 
-#### Challenges Encountered
+### The Technical Explanation
 
-**1.) Lorem Ipsum**:
+<a href="https://imgbb.com/"><img src="https://image.ibb.co/iBgfjx/professor.png" alt="professor" border="0" width="100" height="100"></a>
+
+So now I will be going through the project thoroughly and I will explain each component and how it works extensively. Let us keep in mind there is nothing ground breaking going on here. Only simple CRUD operations and the storing + moving of data and making it meaningful to the user at the end of the day. Despite this simplicity, we believe the project delivers on its intended goal and holds promise for expansion later on.
+
+The hackathon is a very rushed and intense process so yes...the code isn't perfect. Much is repeated. Much could be refactored into modular functions. Some variables could be extracted into a file with global scope. And on and on and on...either way we tried our best to hit the deliverables and have a working application with decent structure.
+
+I will be walking through the components and just be looking at the code and explain what is happening as I go.
+
+#### The Web Portal
+The web portal runs on a Node.js and uses Express for serving static assets and managing endpoints that the chrome extension and web portal both use for access.
+
+#### The Chrome Extension
+The Google Chrome Extension was...well a chrome extension.
 
 ## Built With
 
@@ -77,6 +96,7 @@ Here is what the extension popup looks like:
 * [Express.js](https://expressjs.com/) - Node.js web application framework used
 * [MongoDB](https://www.mongodb.com/) - MongoDB for Database
 * [MongoDB Stitch](https://www.mongodb.com/cloud/stitch) - Backend as a Service for executing frontend db operations
+* [RoboMongo](https://robomongo.org/) - MongoDB GUI for Database Seeding, Cluster Visualization, & Testing
 * [Bootstrap](https://getbootstrap.com/) - Bootstrap for Frontend
 * [jQuery](https://jquery.com/) - Client-Side Document Object Model (DOM) Manipulations and Asynchronous JavaScript & XML (AJAX) Requests
 * [npm](https://www.npmjs.com/) - Package Manager
