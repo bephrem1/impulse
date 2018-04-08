@@ -13,13 +13,13 @@ Timeline: 4/7/18 Started, 4/8/18 Completed
 
 ___
 
-***Mission*** 
+#Mission
 
 Bring Consciousness To Consumerism.
 
 ___
 
-***The Idea***
+#The Idea
 
 Online one-click purchases often lead to buyers making impulse purchases that are
 unnecessary or that they may later regret. Our goal is to protect buyers and allow them to see how
@@ -29,7 +29,7 @@ spending for a more fiscally responsible life.
 
 ___
 
-***Components***
+#Components
 
 - The first thing we had to design was the main website. We need to implement user authentication, user authorization and data analytics. This site would be the central hub of impluse, containg a dashboard that generated analytics for each user based on their activity. This is what it looks like:
 
@@ -57,5 +57,5 @@ This is what the extension popup looks like:
 
 ___
 
-***Features***
+#Features
 - Users can create accounts, login to the dashboard and extension, and keep track of their impulse purchases and analytics associated with them
