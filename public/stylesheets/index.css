@@ -111,6 +111,10 @@ h1, h2, h5{
     font-size: 3vw !important;
 }
 
+#x-icon{
+    color: var(--red);
+}
+
 .stat {
     position: relative;
     max-height: 10vw;
