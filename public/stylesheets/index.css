@@ -42,17 +42,37 @@ h1, h2, h5{
     font-family: "Pacifico";
 }
 
-.nav-item{
-    color: var(--white) !important;
+.nav-item {
+	color: var(--white);
     padding: 5px 10px;
-    background-color: rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	display: inline;
+	position: relative;
+	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
-
-.nav-item:hover{
+.nav-item:hover {
     text-decoration: none;
-    background-color: var(--white);
-    color: var(--green) !important;
-    cursor: pointer;
+	color: var(--green) !important;
+	background-color: transparent;
+	text-shadow: none;
+}
+.nav-item:hover:before {
+	bottom: 100%;
+	top: 0;
+	height: 100%;
+}
+.nav-item:before {
+	display: inline;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 0px;
+	width: 100%;
+	z-index: -1;
+	content: '';
+	color: var(--green) !important;
+	background: var(--white);
+	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
 
 /* GRAPHS */
@@ -158,7 +178,6 @@ h1, h2, h5{
     padding: 8px 14px;
     background-color: rgba(0, 0, 0, 0.1);
 }
-
 
 .index-button-wrapper a:hover{
     text-decoration: none;
