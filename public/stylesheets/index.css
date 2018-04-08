@@ -145,7 +145,6 @@ h1, h2, h5{
     width: 65%;
     height: auto;
     border-radius: 6px;
-    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
     opacity: .95;
 }
 
