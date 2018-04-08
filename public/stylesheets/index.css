@@ -45,6 +45,7 @@ h1, h2, h5{
 .nav-item{
     color: var(--white) !important;
     padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .nav-item:hover{
@@ -141,16 +142,9 @@ h1, h2, h5{
 .index-button-wrapper a{
     color: var(--white) !important;
     padding: 8px 14px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
-#index-sign-in{
-    border-right: 1px solid white;
-}
-
-#index-sign-up{
-    border-left: 1px solid white;
-}
 
 .index-button-wrapper a:hover{
     text-decoration: none;
