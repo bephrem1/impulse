@@ -14,6 +14,10 @@ router.get('/', function(req, res, next) {
     return res.render('index');
 });
 
+router.get('/about', function(req, res, next) {
+    return res.render('about');
+});
+
 // GET '/dashboard'
 router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
 
@@ -38,7 +42,7 @@ router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
 
                 let today = new Date();
                 let curMonth = today.getMonth();
-                
+
                 // Adds date boundaries separated by months
                 for (i = 0; i < 12; i++){
                     if (curMonth-i < 0){
@@ -51,7 +55,7 @@ router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
                 }
 
                 let label = [0,1,2,3,4,5,6,7,8,9,10,11];
-                
+
                 // Iterates through purchasedata
                 if (user){
                     cartSize = user.purchaseData.length;
@@ -82,9 +86,9 @@ router.get('/dashboard', mid.requiresLogin, function(req, res, next) {
                 for (i = 0; i < 12; i++){
                     monthBoundaries[i] = monthBoundaries[i].getMonth()+1;
                 }
-                
+
                 // If no error render dashboard and pass user object in model
-                
+
                 monthBoundaries = monthBoundaries.reverse();
                 purchaseMonthCounter = purchaseMonthCounter.reverse();
                 impulseMonthCounter = impulseMonthCounter.reverse();
