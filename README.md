@@ -115,7 +115,19 @@ Next we will talk about the Chrome Extension. This is the part that caused more 
 <a href="https://ibb.co/gXGKux"><img src="https://preview.ibb.co/g97QZx/Screen_Shot_2018_04_08_at_4_31_51_AM.png" alt="Screen_Shot_2018_04_08_at_4_31_51_AM" border="0" width="500" height="500"></a>
 
 #### The Chrome Extension
-The Google Chrome Extension was...well a chrome extension.
+The Google Chrome Extension was...well a chrome extension. The whole team had little to 0 experience making a chrome extension but we do know javascript and html so we thought it'd be a breeze!! Well...it was actually a lot harder than we thought.
+
+<a href="https://imgbb.com/"><img src="https://image.ibb.co/d079ux/hurdle4.png" alt="hurdle4" border="0" width="100" height="100"></a>
+#### Challenge #4:
+Contexts and sharing data. Since separate context, separate console.
+
+<a href="https://imgbb.com/"><img src="https://image.ibb.co/c02dMc/hurdle5.png" alt="hurdle5" border="0" width="100" height="100"></a>
+#### Challenge #5:
+Importing libraries and global variable scope naming problems (hoisting). no npm, no require('') statements
+
+<a href="https://imgbb.com/"><img src="https://image.ibb.co/kA93nH/hurdle6.png" alt="hurdle6" border="0" width="100" height="100"></a>
+#### Challenge #6:
+Getting stitch to work
 
 ## Built With
 
