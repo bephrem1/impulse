@@ -1,23 +1,23 @@
-# impulse
-Impulse is a platform that mitigates impulsive spending and brings consciousness to consumerism.
+# Impulse
+<b>Impulse is a platform that mitigates impulsive spending and brings consciousness to consumerism.</b>
+__________________________________________
 
-**Contributors:** Benyam Ephrem, Richard Wang, Michael Weinberger
+## The Team: </br>
+<b>Michael Weinberger:</b> The Frontend Wizard </br>
+<b>Benyam Ephrem:</b> The [Mongod](https://docs.mongodb.com/manual/reference/program/mongod/) (aka the backend guy) </br>
+<b>Richard Wang:</b> The Company Intern (he does everything) </br>
 
-Stack: MongoDB, Express, Bootstrap, Node.js
+**School Year:** All Freshman @ University of Maryland (class of 2021) </br>
 
-Additional Tech used: MongoDB Stitch, MongoDB
+__________________________________________
 
-Written in Javascript.
+## The Event: </br>
+[BitCamp 2018](https://bit.camp/)
 
-Timeline: 4/7/18 Started, 4/8/18 Completed
-
-___
-
-# Mission
-
+## The Mission: </br>
 Bring Consciousness To Consumerism.
 
-# The Idea
+## The Idea
 
 Online one-click purchases often lead to buyers making impulse purchases that are
 unnecessary or that they may later regret. Our goal is to protect buyers and allow them to see how
