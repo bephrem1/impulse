@@ -15,7 +15,7 @@
                     <h3>Impulses Avoided This Month</h3>
 
                     <div class = "icon-stat light">
-                            <h1 class = "icon"><i class="fa fa-smile-o"></i></h1>
+                            <h1 class = "icon"><i class="fas fa-history"></i></h1>
                     </div>
 
                     <div class = "inner-stat">
@@ -29,7 +29,7 @@
                     <h3>Total Dollars Saved</h3>
 
                     <div class = "icon-stat light">
-                            <h1 class = "icon"><i class="fa fa-money"></i></h1>
+                            <h1 class = "icon"><i class="fas fa-dollar-sign"></i></h1>
                     </div>
 
                     <div class = "inner-stat">
@@ -44,7 +44,7 @@
                     <h3>Total Purchases</h3>
 
                     <div class = "icon-stat light">
-                            <h1 class = "icon"><i class="fa fa-truck"></i></h1>
+                            <h1 class = "icon"><i class="fas fa-shopping-cart"></i></h1>
                     </div>
 
                     <div class = "inner-stat">
@@ -87,7 +87,7 @@
                                 <td class = "light"><% if (user.purchaseData[i].wasPurchased){ %>
                                             <i class="fas fa-check"></i>
                                         <%} else { %>
-                                            <i class="fas fa-times"></i>
+                                            <i id = "x-icon" class="fas fa-times"></i>
                                         <%}%>
                                 </td>
                                 <td class = "light" ><%= user.purchaseData[i].itemTitle %></td>
