@@ -131,14 +131,25 @@ h1, h2, h5{
 }
 
 #index-image{
-    width: 70%;
+    width: 65%;
     height: auto;
-    border-radius: 4px;
+    border-radius: 6px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+    opacity: .95;
 }
 
 .index-button-wrapper a{
     color: var(--white) !important;
     padding: 8px 14px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#index-sign-in{
+    border-right: 1px solid white;
+}
+
+#index-sign-up{
+    border-left: 1px solid white;
 }
 
 .index-button-wrapper a:hover{
@@ -215,7 +226,13 @@ h1, h2, h5{
     cursor: pointer;
 }
 
-
+.footer-text{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+}
 
 @media (max-width: 768px){
     .nav h1{
