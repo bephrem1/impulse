@@ -127,19 +127,40 @@ Since it is a separate context...*there is literally another whole console* for 
 
 Nothing worked. No code worked. It was *really* frustrating.
 
-So call us crazy, call us naive developer...so be it...we decided to get creative and enginner our own (I think funny) solution to sharing data between the two isolated components. I will explain the solution that we used later but another challenge we faced...
+So call us crazy, call us naive developers...so be it...in the spirit of a *hackathon* we decided to get creative and hack/enginner our own (I think funny) solution to sharing data between the two isolated components. So what we basically knew is that each of these components could talk to the Node.js server and hence have access to the database.
+
+Michael proposed that we create a Auth database collection and when a user sign's in on the chrome extension we map the client's id to the '\_id' on the user's document that is retrieved from a successful sign-in. Then when the webpage component wants to post data it can post it to the correct user id that is logged in by asking an auth endpoint (passing the client ip as a path param) what user id is authenticated on the client ip. When a user logs out or the extension closes the auth document is disposed of.
+
+We both agreed that this was a very hacky solution to a problem that should be solved by some form of messaging inherent to the Google Chrome Extension API but decided to try it just for the challenge and the heck of it and it turned out that it worked pretty well.
+
+But yes, it is not a stable way to auth a user (what if another user authenticates on the same ip...that'd be a one to many relationship which cannot be tolerated, what if a hacker knows the ip of someone logged in and can pull their id then manipulate another user's document? Then they can manipulate a document that is not theirs).
+
+Either way with just a few more hours of researching this aspect of the application could be secured so it was just an experimental thing for us since this is not a production application or even near it.
 
 <a href="https://imgbb.com/"><img src="https://image.ibb.co/c02dMc/hurdle5.png" alt="hurdle5" border="0" width="100" height="100"></a>
 #### Challenge #5:
-Importing libraries and global variable scope naming problems (hoisting). no npm, no require('') statements
+Importing libraries and global variable scope naming problems. The biggest problem with this is how insidious it is. Javascript will hoist variables and functions leading to a clouding of the global namespace and if you are loose with your naming conventions it could come back to bite later.
+
+You will not get a specific line that your code if failing on. You will only see something resolve as undefined and have no reason why and all you can do is move script files around and rename things until the problem resolves. This happened when we were loading the [MongoDB Stitch](https://www.mongodb.com/cloud/stitch) minified js. It had variable names in it that when loaded after certain scripts led to the script being rendered useless and throwing an error internally.
+
+We found that issue just from speculation and it turned out to solve the problem. On top of that when working with the Chrome Extension we could not make user of npm and require('') statements in the way we could easily import and manage libraries on our Node server. I don't personally know too much about importing libraries into js files so it was a challenge working with moving data around different files and working with libraries.
 
 <a href="https://imgbb.com/"><img src="https://image.ibb.co/kA93nH/hurdle6.png" alt="hurdle6" border="0" width="100" height="100"></a>
 #### Challenge #6:
-Getting stitch to work
+Getting MongoDB Stitch to work was definitely a challenge. There was a good amount of documentation reading and question asking that had to take place to get Stitch to work in our frontend but I don't attribute this to the platform as much as to our naiveness when it comes to working with frontend JS for a Google Chrome Extension.
+
+For example we would hold the logged in user's "\_id" in a global field as a string but it turns out the when executing a search against the "\_id" field you must use an [ObjectId object](https://docs.mongodb.com/manual/reference/bson-types/#objectid) format of the string or else the search just won't come up with anything even if a document's "\_id" field as a string matches the string being searched for.
+
+We tried many libraries to convert the string into an ObjectId object but even after converting it still did not work for some reason so we just added another field to user documents that was a string representation of the "\_id" field to search against.
+
+So again, another tiny work around that can be solved easily with a more thought out patch that *actually* solves the core issue.
 
 ______________________________________________
 
 ## Future Updates
+
+<a href="https://imgbb.com/"><img src="https://image.ibb.co/kCnjBc/magic_ball.png" alt="magic_ball" border="0" width="100" height="100"></a>
+
 - Supporting more than just Amazon. Expanding support to other serviecs where impulsive purchases may take place online.
 - Remove tiny bugs that are still in some places
 
