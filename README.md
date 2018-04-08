@@ -27,6 +27,9 @@ spending for a more fiscally responsible life.
 
 # Components
 
+Homepage
+<img src = "https://i.imgur.com/MGHxyWw.png">
+
 - The first thing we had to design was the main website. We need to implement user authentication, user authorization and data analytics. This site would be the central hub of impluse, containg a dashboard that generated analytics for each user based on their activity. This is what it looks like:
 
 <br> 
