@@ -301,4 +301,7 @@ h1, h2, h5{
     .nav h5{
         text-align: center !important;
     }
+    .footer-text{
+        display: none;
+    }
 }
