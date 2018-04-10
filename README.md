@@ -80,7 +80,7 @@ Before we get into the technical explanation (to scare you away) of how this pro
 
 <img src = "https://i.imgur.com/MGHxyWw.png">
 
-The first thing we had to design was the main website. We need to implement user authentication, user authorization and data analytics. This site would be the central hub of impluse, containg a dashboard that generated analytics for each user based on their activity. This is what it looks like:
+The first thing we had to design was the main website. We need to implement user authentication, user authorization and data analytics. This site would be the central hub of impulse, containg a dashboard that generated analytics for each user based on their activity. This is what it looks like:
 
 <img src="https://preview.ibb.co/kEwkHH/Screen_Shot_2018_04_08_at_1_43_23_AM.png">
 
