@@ -18,6 +18,8 @@ __________________________________________
 
 <a href="https://ibb.co/c2BnZx"><img src="https://preview.ibb.co/bWKwSH/win.jpg" alt="win" border="0"></a><br />
 
+<a href="https://ibb.co/jzMehH"><img src="https://preview.ibb.co/gAaTbc/pt2.jpg" alt="pt2" border="0"></a>
+
 ## My Comments: </br>
 (This is Ben speaking now) So first off I've got to say, thank you to my team. **This is all our 2nd hackathon ever.** I couldn't be more proud at how my teammates performed. I got mad when we made some naive choices, when we worked too slowly or rushed too much, but through and through we did this as a team together.
 
