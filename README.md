@@ -12,6 +12,23 @@ __________________________________________
 
 __________________________________________
 
+# BitCamp 2018 Results Are In!
+
+### Impulse Has Won Best Financial Hack Awarded By Capital One </br>
+
+<a href="https://ibb.co/c2BnZx"><img src="https://preview.ibb.co/bWKwSH/win.jpg" alt="win" border="0"></a><br />
+
+## My Comments: </br>
+(This is Ben speaking now) So first off I've got to say, thank you to my team. **This is all our 2nd hackathon ever.** I couldn't be more proud at how my teammates performed. I got mad when we made some naive choices, when we worked too slowly or rushed too much, but through and through we did this as a team together.
+
+Second...it was just surreal to win. We sat there and after we saw that we didn't get the MongoDB award we lost a lot of hope. We knew we had done our best and tried as hard as we could so we got deflated. Then when the words "Impulse" were said I literally sat there wide eyed for like 3 seconds since I thought it was a mistake. Michael shrieked like a little girl and kept pounding my arm (you know you did Michael) and I snapped out of it. Walking up and having all the hundreds of eyes staring at you while taking a picture (all the while forcing a smile through the shock) just went by like a blur. Very thankful to Capital One for actually thinking that our project had merit enough to award us...it's just wild.
+
+Third......this is just wild. Since I was a kid I was always that kid who thought too much and eventually found programming as an outlet. I'm not some superstar child prodigy but I just dabbled in it since 10th grade on and off. I remember being kind of a secluded kid and working in the dark of my bedroom while my mom would tell me to get off my laptop and do something else since I'd work hours on end learning and teaching myself programming. I still think I'm just an "ok" developer but it's just crazy to remember starting out so small with dumb little projects like [FrameShift](https://github.com/bephrem1/FrameShift) & [TiltTheGaps](https://github.com/bephrem1/TiltTheGaps).
+
+I'm no genius or exceptional thinker. This is just what I've done and gravitated towards for a large part of my childhood. It just happened. It's just...what I've done. And seeing that playing around culminate to a cool achievement like this is really touching to me so yeah...that's what I had to say.
+
+__________________________________________
+
 ## The Event: </br>
 [BitCamp 2018](https://bit.camp/)
 
